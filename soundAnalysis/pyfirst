@@ -1,0 +1,20 @@
+from scipy.io.wavfile import read
+
+(fs, x) = read('jazzloop2.wav')
+
+import matplotlib.pyplot as plt
+
+plt.plot(x)
+plt.show()
+
+import numpy as np
+
+t = np.arange(0, len(x)/fs, 1/fs)
+
+y = x[44100:45100]
+
+np.max(y)
+np.max(abs(y))
+
+from scipy.io.wavfile import write
+
